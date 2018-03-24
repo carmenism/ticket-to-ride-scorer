@@ -2,6 +2,8 @@
 
 exports[`Player Matches snapshot 1`] = `
 <div
-  className="player"
-/>
+  className="player-black"
+>
+  <input />
+</div>
 `;

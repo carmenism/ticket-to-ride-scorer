@@ -12,8 +12,8 @@ export interface PlayerState {
   numberTrainsLength5: number;
   numberTrainsLength6: number;
   numberTrainsLength8: number;
-  routesAchieved: number;
-  routesMissed: number;
+  routesAchieved: number[];
+  routesMissed: number[];
   numberUnusedStations: number;
   finalScore: number;
   longestRoute: boolean;
@@ -31,12 +31,22 @@ class Player extends React.Component<PlayerProps, PlayerState> {
       numberTrainsLength5: 0,
       numberTrainsLength6: 0,
       numberTrainsLength8: 0,
-      routesAchieved: 0,
-      routesMissed: 0,
+      routesAchieved: [],
+      routesMissed: [],
       numberUnusedStations: 3,
       finalScore: 0,
       longestRoute: false
     };
+  }
+
+  public sumArray(arr: number[]): number {
+    let sum = 0;
+
+    if (arr != null && arr.length > 0) {      
+      arr.forEach((x: number) => sum += x);
+    }
+
+    return sum;
   }
 
   public calculateSubScoreTrains(): number {
@@ -56,14 +66,14 @@ class Player extends React.Component<PlayerProps, PlayerState> {
   public calculateSubScoreRoutes(): number {
     let score = 0;
 
-    score += this.state.routesAchieved;
-    score -= this.state.routesAchieved;
+    score += this.sumArray(this.state.routesAchieved);
+    score -= this.sumArray(this.state.routesMissed);
 
     return score;
   }
 
   public calculateSubScoreStationBonus(): number {
-    return 3 * this.calculateSubScoreTrains();
+    return 4 * this.state.numberUnusedStations;
   }
 
   public calculateScore(): number {
@@ -82,7 +92,8 @@ class Player extends React.Component<PlayerProps, PlayerState> {
 
   public render(): JSX.Element {
     return (
-      <div className="player">
+      <div className={'player-' + this.props.color}>
+        <input />
       </div>
     );
   }
