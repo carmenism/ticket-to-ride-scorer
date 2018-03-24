@@ -1,22 +1,12 @@
 import * as React from 'react';
+import { PlayerScore } from '../model';
 
 export interface PlayerProps {
   color: string;
 }
 
-export interface PlayerState {
-  numberTrainsLength1: number;
-  numberTrainsLength2: number;
-  numberTrainsLength3: number;
-  numberTrainsLength4: number;
-  numberTrainsLength5: number;
-  numberTrainsLength6: number;
-  numberTrainsLength8: number;
-  routesAchieved: number[];
-  routesMissed: number[];
-  numberUnusedStations: number;
+export interface PlayerState extends PlayerScore {
   finalScore: number;
-  longestRoute: boolean;
 }
 
 class Player extends React.Component<PlayerProps, PlayerState> {
