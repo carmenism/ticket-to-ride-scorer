@@ -7,9 +7,9 @@ describe('Player', () => {
 
   beforeEach(() => {
     wrapper = shallow(
-        <Player
-          color="black"
-        />
+      <Player
+        color="black"
+      />
     );
   });
 

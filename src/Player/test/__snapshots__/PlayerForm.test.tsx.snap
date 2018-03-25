@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayerForm Matches snapshot 1`] = `
+<form>
+  <PlayerForm
+    handleChange={[MockFunction]}
+    key="numberTrainsLength1"
+    length={1}
+    name="numberTrainsLength1"
+    value={1}
+  />
+  <PlayerForm
+    handleChange={[MockFunction]}
+    key="numberTrainsLength2"
+    length={2}
+    name="numberTrainsLength2"
+    value={3}
+  />
+  <PlayerForm
+    handleChange={[MockFunction]}
+    key="numberTrainsLength3"
+    length={3}
+    name="numberTrainsLength3"
+    value={2}
+  />
+  <PlayerForm
+    handleChange={[MockFunction]}
+    key="numberTrainsLength4"
+    length={4}
+    name="numberTrainsLength4"
+    value={0}
+  />
+  <PlayerForm
+    handleChange={[MockFunction]}
+    key="numberTrainsLength5"
+    length={5}
+    name="numberTrainsLength5"
+    value={1}
+  />
+  <PlayerForm
+    handleChange={[MockFunction]}
+    key="numberTrainsLength6"
+    length={6}
+    name="numberTrainsLength6"
+    value={0}
+  />
+  <PlayerForm
+    handleChange={[MockFunction]}
+    key="numberTrainsLength8"
+    length={8}
+    name="numberTrainsLength8"
+    value={0}
+  />
+</form>
+`;

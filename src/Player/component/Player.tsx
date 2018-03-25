@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { PlayerScore } from '../model';
+import PlayerForm from './PlayerForm';
 
 export interface PlayerProps {
   color: string;
 }
 
 export interface PlayerState extends PlayerScore {
-  finalScore: number;
+  score: number;
 }
 
 class Player extends React.Component<PlayerProps, PlayerState> {
@@ -23,10 +24,25 @@ class Player extends React.Component<PlayerProps, PlayerState> {
       numberTrainsLength8: 0,
       routesAchieved: [],
       routesMissed: [],
-      numberUnusedStations: 3,
-      finalScore: 0,
+      numberUnusedStations: 0,
+      score: 0,
       longestRoute: false
     };
+    
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  public handleChange(event: any): void {
+    const name = event.target.name;
+    const value = event.target.value;
+
+    this.setState(
+      {
+        [name]: value,
+        score: this.calculateScore()
+      },
+      // tslint:disable-next-line:no-console
+      () => { console.log(this.state.score); });
   }
 
   public sumArray(arr: number[]): number {
@@ -82,9 +98,23 @@ class Player extends React.Component<PlayerProps, PlayerState> {
 
   public render(): JSX.Element {
     return (
-      <div className={'player-' + this.props.color}>
-        <input />
-      </div>
+      <>
+      <PlayerForm
+        numberTrainsLength1={this.state.numberTrainsLength1}
+        numberTrainsLength2={this.state.numberTrainsLength2}
+        numberTrainsLength3={this.state.numberTrainsLength3}
+        numberTrainsLength4={this.state.numberTrainsLength4}
+        numberTrainsLength5={this.state.numberTrainsLength5}
+        numberTrainsLength6={this.state.numberTrainsLength6}
+        numberTrainsLength8={this.state.numberTrainsLength8}
+        routesAchieved={this.state.routesAchieved}
+        routesMissed={this.state.routesAchieved}
+        numberUnusedStations={this.state.numberUnusedStations}
+        longestRoute={this.state.longestRoute}
+        handleChange={this.handleChange}
+      />
+      {this.state.score}
+      </>
     );
   }
 }

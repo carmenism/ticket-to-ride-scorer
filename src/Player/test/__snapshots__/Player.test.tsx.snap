@@ -1,9 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Player Matches snapshot 1`] = `
-<div
-  className="player-black"
->
-  <input />
-</div>
+<React.Fragment>
+  <PlayerForm
+    handleChange={[Function]}
+    longestRoute={false}
+    numberTrainsLength1={0}
+    numberTrainsLength2={0}
+    numberTrainsLength3={0}
+    numberTrainsLength4={0}
+    numberTrainsLength5={0}
+    numberTrainsLength6={0}
+    numberTrainsLength8={0}
+    numberUnusedStations={0}
+    routesAchieved={Array []}
+    routesMissed={Array []}
+  />
+  0
+</React.Fragment>
 `;
