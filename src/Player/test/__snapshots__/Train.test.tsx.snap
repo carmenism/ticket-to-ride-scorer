@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Train Matches snapshot 1`] = `
+<label>
+  1
+  :
+  <input
+    max={15}
+    min={0}
+    name="numberTrainsLength1"
+    onBlur={[MockFunction]}
+    onChange={[MockFunction]}
+    onInput={[MockFunction]}
+    type="number"
+    value={4}
+  />
+</label>
+`;
