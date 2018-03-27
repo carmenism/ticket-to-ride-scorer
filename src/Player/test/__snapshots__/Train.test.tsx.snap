@@ -5,6 +5,7 @@ exports[`Train Matches snapshot 1`] = `
   1
   :
   <input
+    className="uk-input"
     max={15}
     min={0}
     name="numberTrainsLength1"

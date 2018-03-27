@@ -16,6 +16,7 @@ const PlayerForm: React.SFC<TrainProps> = (props) => {
     <label>
       {props.length}:
       <input
+        className="uk-input"
         type="number"
         name={props.name}
         value={props.value}
